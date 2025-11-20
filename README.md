@@ -9,6 +9,7 @@ Este proyecto nace de la necesidad de modernizar la gestión de inventarios para
 - Proveer datos claros (ventas diarias)
 - Interfaz amigable con usuario.
 
+## Tecnologías utilizadas
 * **Frontend:** [Next.js](https://nextjs.org/)
 * **Estilos:** [Tailwind CSS](https://tailwindcss.com) + Lucide React (icons).
 * **Base de Datos:** PostgreSQL
