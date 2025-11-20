@@ -1,4 +1,6 @@
 import SideBar from "@/components/SideBar";
+import DashboardHeader from "@/components/DashboardHeader";
+import MetricCard from "@/components/MetricCard";
 import React from "react";
 import {
   Package,
@@ -16,87 +18,39 @@ export default function Dashboard() {
 
       {/* 2. CONTENIDO PRINCIPAL */}
       <main className="flex-1 overflow-y-auto">
-        {/* Header Móvil / Superior */}
+        {/* Header Móvil / Superior
         <header className="bg-white shadow-sm h-16 flex items-center justify-between px-6 md:hidden">
           <span className="font-bold text-lg">Trufadas</span>
           {/* Aquí iría un botón de menú hamburguesa */}
-        </header>
 
         <div className="p-6 max-w-7xl mx-auto">
-          {/* Saludo y Acciones Rápidas */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-800">
-                Buenos días, Usuario
-              </h2>
-              <p className="text-slate-500">Aquí tienes el resumen de hoy.</p>
-            </div>
-
-            {/* Estos botones reemplazan "Ingresar Venta" e "Ingresar Producto" */}
-            <div className="flex gap-3">
-              <button className="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 px-4 py-2 rounded-lg flex items-center gap-2 shadow-sm text-sm font-medium transition-all">
-                <Package size={16} />
-                Nuevo Producto
-              </button>
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 shadow-lg shadow-emerald-600/20 text-sm font-medium transition-all">
-                <PlusCircle size={16} />
-                Nueva Venta
-              </button>
-            </div>
-          </div>
+          <DashboardHeader />
 
           {/* 3. TARJETAS DE ESTADÍSTICAS (KPIs) - Valor agregado que no tenías antes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* Card 1 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-slate-500 text-sm font-medium mb-1">
-                    Ventas del Día
-                  </p>
-                  <h3 className="text-3xl font-bold text-slate-800">$45.000</h3>
-                </div>
-                <div className="p-2 bg-emerald-100 text-emerald-600 rounded-lg">
-                  <TrendingUp size={20} />
-                </div>
-              </div>
-              <span className="text-emerald-600 text-xs font-medium flex items-center gap-1 mt-2">
-                +12% vs ayer
-              </span>
-            </div>
+            <MetricCard
+              title="Ventas del Día"
+              value="$45.000"
+              icon={<TrendingUp size={20} />}
+              trend="+12% vs ayer"
+              trendColor="success"
+            />
 
-            {/* Card 2 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-slate-500 text-sm font-medium mb-1">
-                    Total Productos
-                  </p>
-                  <h3 className="text-3xl font-bold text-slate-800">24</h3>
-                </div>
-                <div className="p-2 bg-blue-100 text-blue-600 rounded-lg">
-                  <Package size={20} />
-                </div>
-              </div>
-            </div>
+            {/* 2. Tarjeta de Productos (Neutra) */}
+            <MetricCard
+              title="Total Productos"
+              value="24"
+              icon={<Package size={20} />}
+            />
 
-            {/* Card 3 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-slate-500 text-sm font-medium mb-1">
-                    Stock Bajo
-                  </p>
-                  <h3 className="text-3xl font-bold text-red-600">3</h3>
-                </div>
-                <div className="p-2 bg-red-100 text-red-600 rounded-lg">
-                  <AlertTriangle size={20} />
-                </div>
-              </div>
-              <span className="text-slate-400 text-xs mt-2 block">
-                Requieren atención urgente
-              </span>
-            </div>
+            {/* 3. Tarjeta de Alerta (Stock Bajo) */}
+            <MetricCard
+              title="Stock Bajo"
+              value="3"
+              icon={<AlertTriangle size={20} />}
+              alert={true} // Esto activará el color rojo
+              trendColor="danger"
+            />
           </div>
 
           {/* 4. SECCIÓN DE VENTAS RECIENTES (Reemplaza "Listar Ventas") */}

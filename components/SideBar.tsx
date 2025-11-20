@@ -2,7 +2,7 @@ import { LayoutDashboard, ShoppingBag, Package, Settings } from "lucide-react";
 
 export default function SideBar() {
   return (
-    <aside className="w-64 flex flex-col hidden md:flex bg-surface-dark text-foreground-on-dark">
+    <aside className="w-64 md:flex-col hidden md:flex bg-surface-dark text-foreground-on-dark">
       <div className="p-6 border-b border-surface-hover">
         <h1 className="text-2xl font-bold text-text-accent tracking-tight">
           Sistema<span className="text-foreground-on-dark">Inventario</span>
