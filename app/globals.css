@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* -- Paleta Base (Extraída del Mockup Slate/Emerald) -- */
+    --palette-slate-900: #0f172a; /* Sidebar Fondo */
+    --palette-slate-800: #1e293b; /* Sidebar Hover/Bordes */
+    --palette-slate-500: #64748b; /* Texto Muted */
+    --palette-slate-400: #94a3b8;
+    --palette-slate-200: #e2e8f0; /* Bordes Claros */
+    --palette-slate-100: #f1f5f9; /* Fondo General */
+
+    --palette-emerald-600: #059669; /* Botones / Acentos */
+    --palette-emerald-400: #34d399; /* Logo Acento */
+    --palette-emerald-100: #d1fae5; /* Fondos sutiles */
+
+    --palette-red-600: #dc2626; /* Danger */
+    --palette-white: #ffffff; /* Blanco Puro */
+
+    /* -- Fondos (Surfaces) -- */
+    --color-background: var(--palette-slate-100);
+    --color-surface-dark: var(--palette-slate-900);
+    --color-surface-light: var(--palette-white);
+    --color-surface-accent: var(--palette-emerald-600);
+    --color-surface-hover: var(--palette-slate-800);
+
+    /* -- Texto (Foregrounds) -- */
+    --color-foreground: var(--palette-slate-900);
+    --color-foreground-on-dark: var(--palette-white);
+    --color-text-primary: var(--palette-slate-800);
+    --color-text-secondary: var(--palette-slate-500);
+    --color-text-muted: var(--palette-slate-400);
+    --color-text-accent: var(--palette-emerald-400);
+    --color-text-danger: var(--palette-red-600);
+
+    /* -- Botones (Buttons) -- */
+    --color-btn-primary-bg: var(--palette-emerald-600);
+    --color-btn-primary-text: var(--palette-white);
+    --color-btn-primary-hover-bg: #047857;
+
+    --color-btn-secondary-bg: var(--palette-white);
+    --color-btn-secondary-text: var(--palette-slate-900);
+    --color-btn-secondary-border: var(--palette-slate-200);
+
+    /* -- Links -- */
+    --color-link-active: var(--palette-emerald-600);
+    --color-link-hover: var(--palette-slate-900);
+
+    /* -- Bordes y Acentos -- */
+    --color-border-primary: var(--palette-slate-200);
+    --color-border-dark: var(--palette-slate-800);
+    --color-accent-warning: #f59e0b;
+
+    /* -- Variables Base de Next.js -- */
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    /* Fondos */
+    --color-background: var(--color-background);
+    --color-surface-dark: var(--color-surface-dark);
+    --color-surface-light: var(--color-surface-light);
+    --color-surface-accent: var(--color-surface-accent);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    /* Texto */
+    --color-foreground: var(--color-foreground);
+    --color-foreground-on-dark: var(--color-foreground-on-dark);
+    --color-text-primary: var(--color-text-primary);
+    --color-text-secondary: var(--color-text-secondary);
+    --color-text-muted: var(--color-text-muted);
+    --color-text-accent: var(--color-text-accent);
+    --color-text-danger: var(--color-text-danger);
+
+    /* Botones */
+    --color-btn-primary-bg: var(--color-btn-primary-bg);
+    --color-btn-primary-text: var(--color-btn-primary-text);
+    --color-btn-primary-hover-bg: var(--color-btn-primary-hover-bg);
+
+    /* Links y Bordes */
+    --color-border-primary: var(--color-border-primary);
+    --color-border-dark: var(--color-border-dark);
+
+    /* Fuentes (Si las mantienes) */
+    --font-family-sans: var(--font-mukta);
+    --font-family-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-family-sans), sans-serif;
 }
