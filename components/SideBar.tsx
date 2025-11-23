@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LayoutDashboard, ShoppingBag, Package, Settings } from "lucide-react";
 
 export default function SideBar() {
@@ -11,38 +12,38 @@ export default function SideBar() {
       </div>
 
       <nav className="flex-1 p-4 mt-4 space-y-2">
-        <a
+        <Link
           href="#"
           className="flex font-medium items-center gap-3 px-4 py-3 text-text-muted hover:bg-surface-hover rounded-xl transition-colors"
         >
           <LayoutDashboard size={20} />
           <span>Inicio</span>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="#"
           className="flex items-center gap-3 px-4 py-3 text-text-muted hover:bg-surface-hover hover:text-foreground-on-dark rounded-xl transition-colors"
         >
           <ShoppingBag size={20} />
           <span>Ventas</span>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="#"
           className="flex items-center gap-3 px-4 py-3 text-text-muted hover:bg-surface-hover hover:text-foreground-on-dark rounded-xl transition-colors"
         >
           <Package size={20} />
           <span>Productos</span>
-        </a>
+        </Link>
 
         <div className="pt-4 mt-4 border-t border-border-dark">
-          <a
+          <Link
             href="#"
             className="flex items-center gap-3 px-4 py-3 text-text-muted hover:bg-surface-hover hover:text-foreground-on-dark rounded-xl transition-colors"
           >
             <Settings size={20} />
             <span>Configuración</span>
-          </a>
+          </Link>
         </div>
       </nav>
     </aside>

@@ -2,14 +2,7 @@ import SideBar from "@/components/SideBar";
 import DashboardHeader from "@/components/DashboardHeader";
 import MetricCard from "@/components/MetricCard";
 import React from "react";
-import {
-  Package,
-  LogOut,
-  PlusCircle,
-  TrendingUp,
-  AlertTriangle,
-  Search,
-} from "lucide-react";
+import { Package, TrendingUp, AlertTriangle } from "lucide-react";
 
 export default function Dashboard() {
   return (
@@ -26,7 +19,6 @@ export default function Dashboard() {
         <div className="p-6 max-w-7xl mx-auto">
           <DashboardHeader />
 
-          {/* 3. TARJETAS DE ESTADÍSTICAS (KPIs) - Valor agregado que no tenías antes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <MetricCard
               title="Ventas del Día"
@@ -36,19 +28,17 @@ export default function Dashboard() {
               trendColor="success"
             />
 
-            {/* 2. Tarjeta de Productos (Neutra) */}
             <MetricCard
               title="Total Productos"
               value="24"
               icon={<Package size={20} />}
             />
 
-            {/* 3. Tarjeta de Alerta (Stock Bajo) */}
             <MetricCard
               title="Stock Bajo"
               value="3"
               icon={<AlertTriangle size={20} />}
-              alert={true} // Esto activará el color rojo
+              alert={true}
               trendColor="danger"
             />
           </div>
