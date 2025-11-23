@@ -9,6 +9,7 @@
     --palette-slate-400: #94a3b8;
     --palette-slate-200: #e2e8f0; /* Bordes Claros */
     --palette-slate-100: #f1f5f9; /* Fondo General */
+    --palette-slate-50: #f8fafc;
 
     --palette-emerald-600: #059669; /* Botones / Acentos */
     --palette-emerald-400: #34d399; /* Logo Acento */
@@ -23,6 +24,7 @@
     --color-surface-light: var(--palette-white);
     --color-surface-accent: var(--palette-emerald-600);
     --color-surface-hover: var(--palette-slate-800);
+    --color-surface-hover-table: var(--palette-slate-50);
 
     /* -- Texto (Foregrounds) -- */
     --color-foreground: var(--palette-slate-900);
@@ -30,7 +32,7 @@
     --color-text-primary: var(--palette-slate-800);
     --color-text-secondary: var(--palette-slate-500);
     --color-text-muted: var(--palette-slate-400);
-    --color-text-accent: var(--palette-emerald-400);
+    --color-text-accent: var(--palette-emerald-600);
     --color-text-danger: var(--palette-red-600);
 
     /* -- Botones (Buttons) -- */
@@ -64,6 +66,7 @@
     --color-surface-light: var(--color-surface-light);
     --color-surface-accent: var(--color-surface-accent);
     --color-surface-hover: var(--color-surface-hover);
+    --color-surface-hover-table: var(--color-surface-hover-table);
 
     /* Texto */
     --color-foreground: var(--color-foreground);
